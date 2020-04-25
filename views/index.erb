@@ -1,0 +1,9 @@
+<h1>Welcome to the Sinatra Cookbook!</h1>
+
+<p>Your current recipes:</p>
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li><%= recipe.name %>: <%= recipe.description %> - <a href="/recipes/<%= index %>">Destroy</a></li>
+  <% end %>
+<a href="/new">Add a recipe</a>
