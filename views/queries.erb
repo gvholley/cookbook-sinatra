@@ -1,0 +1,25 @@
+
+<h1>Search Results</h1>
+
+<ul>
+  <% @search_results.each do |recipe| %>
+    <li><%= recipe.name %>: <%= recipe.description %>
+
+  <form action="/recipes" method="post">
+  <div>
+    <input type="hidden" name="name" value = "<%= recipe.name %>">
+  </div>
+  <div>
+    <input type="hidden" name="description" value = "<%= recipe.description %>">
+  </div>
+  <div>
+    <input type="hidden" name="prep_time" value = "<%= recipe.prep_time %>">
+  </div>
+  <div>
+    <input type="hidden" name="difficulty" value = "<%= recipe.difficulty %>">
+  </div>
+  <input type="submit" value="Add to cookbook">
+</form>
+ </li>
+  <% end %>
+</ul>
